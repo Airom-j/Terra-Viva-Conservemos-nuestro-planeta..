@@ -1,0 +1,480 @@
+<Terra Viva · Conservemos nuestro planeta>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terra Viva · Conservemos nuestro planeta</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap');
+        
+        :root {
+            --primary: #006400;
+            --accent: #228B22;
+            --light: #f0f7f0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8fff8;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 15px rgba(0, 100, 0, 0.3);
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+        }
+        
+        nav {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .tab {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 12px 20px;
+            border-radius: 8px;
+            transition: all 0.3s;
+            position: relative;
+        }
+        
+        .tab:hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+        
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 220px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            border-radius: 8px;
+            z-index: 1000;
+            margin-top: 10px;
+        }
+        
+        .dropdown-content a {
+            color: #333;
+            padding: 12px 20px;
+            text-decoration: none;
+            display: block;
+            transition: 0.2s;
+        }
+        
+        .dropdown-content a:hover {
+            background-color: var(--light);
+            color: var(--primary);
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://source.unsplash.com/random/1600x900/?earth,forest') center/cover no-repeat;
+            height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+        
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #ffd700;
+            color: #006400;
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255,215,0,0.4);
+        }
+        
+        section {
+            padding: 80px 0;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        h2:after {
+            content: '';
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-15px);
+        }
+        
+        .card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+        
+        .card-content {
+            padding: 1.8rem;
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        footer {
+            background: #0a2a0a;
+            color: #ddd;
+            padding: 3rem 0 2rem;
+        }
+        
+        .team {
+            background:#98FB98;
+            padding: 2rem;
+            border-radius: 12px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+        
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #334433;
+        }
+        
+        th {
+            background: #98FB98;
+        }
+        
+        .external-links {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .external-links a {
+            color: var(--accent);
+            text-decoration: none;
+            padding: 12px 24px;
+            border: 2px solid var(--accent);
+            border-radius: 50px;
+            transition: 0.3s;
+        }
+        
+        .external-links a:hover {
+            background: var(--accent);
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            nav {
+                gap: 1rem;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+       <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">🌱 Terra Viva</div>
+            <nav>
+                <!-- Pestaña 1 -->
+                <div class="dropdown">
+                    <a href="#inicio" class="tab">Inicio</a>
+                </div>
+                
+                <!-- Pestaña 2 -->
+                <div class="dropdown">
+                    <a href="#causas" class="tab">Causas</a>
+                    <div class="dropdown-content">
+                       
+                    </div>
+                </div>
+                
+                <!-- Pestaña 3 -->
+                <div class="dropdown">
+                    <a href="#efectos" class="tab">Efectos</a>
+                    <div class="dropdown-content">
+                       
+                    </div>
+                </div>
+                
+                <!-- Pestaña 4 -->
+                <div class="dropdown">
+                    <a href="#soluciones" class="tab">Soluciones</a>
+                    <div class="dropdown-content">
+                        
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+
+    <!-- Hero -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h1>Conservemos nuestro planeta</h1>
+            <p>La contaminación amenaza la vida en la Tierra. Descubre sus causas, efectos y cómo podemos actuar juntos.</p>
+            <a href="#soluciones" class="btn">¡Actúa ahora!</a>
+        </div>
+    </section>
+
+    <!-- Causas -->
+    <section id="causas">
+        <h2>Causas de la Contaminación</h2>
+        <div class="content-grid">
+            <div class="card">
+               <img src="https://gtaambiental.com/wp-content/uploads/24-sustitucion-de-energias-fosiles-por-energias-renovables-economia-circular-y-reciclado-de-materiales-gta-ambiental-featured-img.jpg" alt="Descripción breve de la imagen" width="500" height="300" /> Fábrica contaminante
+                <div class="card-content">
+                    <h3>Industria y Energía</h3>
+                    <p>La quema de combustibles fósiles y la emisión de gases tóxicos por parte de las industrias son las principales fuentes de contaminación atmosférica.</p>
+                </div>
+            </div>
+            <div class="card">
+               <img src="https://content.nationalgeographic.com.es/medio/2021/02/13/trafico-en-manhattan-durante-la-cuarentena-por-covid-19-el-pasado-octubre_bd674561_1280x672.jpg" width="500" height="300" /> Tráfico
+                <div class="card-content">
+                    <h3>Transporte</h3>
+                    <p>Los vehículos motorizados emiten millones de toneladas de CO₂ y partículas contaminantes diariamente.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://sds.uanl.mx/wp-content/uploads/elementor/thumbs/Contaminacio%CC%81n-ambiental-qmykpdy1aqszht1lbxqn5bssbezrhvjkd7qdumw8zs.jpeg" width="500" height="300" /> Agricultura
+                <div class="card-content">
+                    <h3>Agricultura y Residuos</h3>
+                    <p>El uso excesivo de pesticidas, fertilizantes y la mala gestión de desechos plásticos afectan el suelo y el agua.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Efectos -->
+    <section id="efectos" style="background-color: #f0f7f0;">
+        <h2>Efectos en el Planeta y la Humanidad</h2>
+        <div class="content-grid">
+            <div class="card">
+           <img src="https://cuidateplus.marca.com/sites/default/files/styles/natural/public/cms/contaminacion-ilustracion.jpg.webp?itok=SN6LDyHS" width="500" height="300" /> Salud
+                <div class="card-content">
+                    <h3>En la Salud Humana</h3>
+                    <p>Enfermedades respiratorias, cáncer y problemas cardiovasculares aumentan debido a la mala calidad del aire.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://scontent.fver1-1.fna.fbcdn.net/v/t39.30808-6/616065789_1308428011328758_7857427464450516410_n.jpg?stp=dst-jpg_s640x640_tt6&_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_ohc=m-aUTphEq_8Q7kNvwFpbdrO&_nc_oc=AdouQfKiuFE-H1UABAGpinu4BmQTN-00-zWXJSZUyDtanEBBIUPaiJCaTYw-g0LlyuQdNeV6SyIL0JZUthsbM_4p&_nc_zt=23&_nc_ht=scontent.fver1-1.fna&_nc_gid=SRa47oZcO6OAfyvd8Dcurg&_nc_ss=7b289&oh=00_Af7dTGp1dFcYFORRr0YYynUlOl9OrnWLLgXQLRZB8_xotw&oe=6A0F209C" width="500" height="300" /> Océanos
+                <div class="card-content">
+                    <h3>En los Ecosistemas</h3>
+                    <p>La contaminación plástica y química destruye hábitats marinos y terrestres, causando la pérdida de biodiversidad.</p>
+                </div>
+            </div>
+            <div class="card">
+             <img src="https://cdn0.ecologiaverde.com/es/posts/0/9/0/impacto_ambiental_del_aumento_de_las_temperaturas_90_600.webp" width="500" height="300" /> Clima
+                <div class="card-content">
+                    <h3>Cambio Climático</h3>
+                    <p>El aumento de gases de efecto invernadero acelera el calentamiento global y eventos climáticos extremos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Multimedia y Soluciones -->
+    <section id="soluciones">
+        <h2>Soluciones y Acciones</h2>
+     <div style="margin-bottom: 4rem;">
+            <h3 style="text-align:center; margin-bottom: 1.5rem;">Video: La crisis de la contaminación</h3>
+            <div class="video-container"> 
+
+                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/fA4HWn_6Ph0?si=wJiAFXSujMuewR4H&amp;start=10" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><iframe width="560" height="315" src="https://www.youtube.com/embed/fA4HWn_6Ph0?si=8dtseZkunJpShu-w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        title="Documental contaminación ambiental" 
+                       frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen></iframe>
+            </div>
+        </div>
+        
+        <div class="content-grid">
+            <div class="card">
+                <div class="card-content">
+                    <h3>Acciones Individuales</h3>
+                    <ul>
+                        <li>Reducir, reutilizar y reciclar</li>
+                        <li>Usar transporte público o bicicleta</li>
+                        <li>Plantar árboles</li>
+                        <li>Consumir productos locales y ecológicos</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <h3>¿Qué puedes hacer hoy?</h3>
+                    <p>Pequeños cambios generan un gran impacto. Cada acción cuenta para un futuro más verde.</p>
+                    <a href="#" class="btn" style="margin-top: 1rem;">Comprométete</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enlaces externos -->
+    <section style="background: #e6f0e6; text-align: center;">
+        <h2>Recursos recomendados</h2>
+        <div class="external-links">
+            <a href="https://www.greenpeace.org/" target="_blank">🌍 Greenpeace</a>
+            <a href="https://www.worldwildlife.org/" target="_blank">🐼 WWF</a>
+        </div>
+    </section>
+    <!-- Datos del equipo -->
+    <footer>
+        <div class="team" style="max-width: 1200px; margin: 0 auto; padding: 2rem;">
+            <h2 style="color:#000000; text-align: center;">Equipo Terra Viva</h2>
+            <table>
+                <thead>
+	 <dir 
+                    <tr>
+                        <th>Apellido y Nombre</th>
+                        <th>Semestre</th>
+                        <th>Grupo</th>
+                        <th>Especialidad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>CASTAÑEDA ZAYAS JOSE EDUARDO</td>
+                        <td>SEGUNDO </td>
+                        <td>A</td>
+                        <td> LOGISTICA </td>
+                    </tr>
+                    <tr>
+                        <td> JUAREZ GAYTAN AARON </td>
+                        <td> SEGUNDO </td>
+                        <td>A</td>
+                        <td> LOGISTICA
+
+                </tr>
+                                    </tbody>
+            </table>
+        </div>
+        
+        <div style="text-align: center; margin-top: 2rem; font-size: 0.9rem;">
+            <p>&copy; 2026 Terra Viva - Conservemos nuestro planeta</p>
+            <p>Proyecto educativo • Todos los enlaces funcionan correctamente</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if (this.getAttribute('href') !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
